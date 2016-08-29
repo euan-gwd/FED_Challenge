@@ -1,0 +1,20 @@
+{
+  "name": "front-end-challenge",
+  "version": "0.0.1",
+  "description": "Simple Website with gulp, browser-sync, babel and Sass",
+  "main": "build/index.html",
+  "author": "Euan Greenwood",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2"
+  }
+}
