@@ -10,7 +10,7 @@ const gulp = require('gulp'),
 gulp.task('styles', () => {
 	return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in src/scss
 		.pipe(sass({
-			outputStyle: 'compressed'
+			outputStyle: 'compact'
 		}).on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
 		.pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR')) //adds vendor prefixes if needed
 		.pipe(gulp.dest('build/css')) // outputs CSS to src/css

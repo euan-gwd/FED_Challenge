@@ -1,0 +1,14 @@
+$borders: #2cd57a;
+
+body {
+	box-sizing: border-box;
+}
+
+.c4 {
+	align-items: center;
+	border: 1px solid $borders;
+	display: flex;
+	height: 100px;
+	justify-content: center;
+	width: 100px;
+}
