@@ -1,13 +1,20 @@
 $borders: #2cd57a;
 
-body {
-	box-sizing: border-box;
+.weather-app {
+	height: 250px;
+
+	.forecast {
+		display: inline-block;
+		height: 100px;
+		list-style: none;
+		width: 150px;
+	}
 }
 
 .c4 {
 	align-items: center;
 	border: 1px solid $borders;
-	display: flex;
+	display: inline-flex;
 	height: 100px;
 	justify-content: center;
 	width: 100px;
