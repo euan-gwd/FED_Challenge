@@ -4,6 +4,7 @@ const gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	reload = browserSync.reload,
 	plumber = require('gulp-plumber'),
+	runSequence = require('run-sequence'),
 	babel = require('gulp-babel');
 
 // Compile Sass into CSS
@@ -59,4 +60,8 @@ gulp.task('default', ['html', 'styles', 'es2015', 'browserSync'], () => {
 	gulp.watch('src/scss/**/*.scss', ['styles']);
 	gulp.watch('src/js/**/*.js', ['es2015']);
 	gulp.watch('src/**/*.html', ['html']);
+});
+
+gulp.task('build', (callback) => {
+	runSequence('html', 'styles', 'es2015', callback);
 });
