@@ -12,4 +12,4 @@ h2 { background-color: #8193a8; box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75); 
 
 .c4 { -ms-flex-align: center; align-items: center; border: 1px solid #2cd57a; display: -ms-inline-flexbox; display: inline-flex; height: 100px; -ms-flex-pack: center; justify-content: center; width: 100px; }
 
-.prize { display: inline-block; height: 50px; list-style: none; width: 50px; }
+.prize { font-size: 2rem; display: inline-block; height: 50px; list-style: none; width: 50px; }

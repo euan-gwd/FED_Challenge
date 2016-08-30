@@ -3,7 +3,10 @@
 
 	$(function() {
 		getWeather();
-		randomize();
+		$('.btn-draw').on('click', function() {
+			randomize();
+			$(this).remove();
+		});
 		challenge3();
 	});
 
@@ -25,7 +28,7 @@
 																													<li>${forecast.text}</li>
 																													</ul>`);
 		});
-	}
+	} /*end getWeather*/
 
 	function randomize() {
 		const drawItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -37,21 +40,22 @@
 			drawItems[counter] = drawItems[winner];
 			drawItems[winner] = shuffle;
 		}
+		// $('.prize').remove();
 		$.each(drawItems, function(i, drawItem) {
 			$('.random-number-app').append(`<p class="prize">${drawItem}</p>`);
 		});
-	}
+	} /*end randomize*/
 
 	function challenge3() {
-		var swapper = {
+		let swapper = {
 			title: 'this is a sample string',
-			onSwap: function() {
-				var str = this.title;
-				return str.split('').reverse().join('');
+			onSwap() {
+				var string = this.title;
+				return string.split('').reverse().join('');
 			}
 		};
 		$('.reverse-string-app').append(`<p>${swapper.title}</p>`);
 		$('.reverse-string-app').append(`<p>${swapper.onSwap()}</p>`);
-	}
+	} /*end challenge3*/
 
 })();

@@ -5,7 +5,10 @@
 
 	$(function () {
 		getWeather();
-		randomize();
+		$('.btn-draw').on('click', function () {
+			randomize();
+			$(this).remove();
+		});
 		challenge3();
 	});
 
@@ -22,7 +25,7 @@
 		$.each(forecasts, function (i, forecast) {
 			$('.weather-app').append('<ul class="forecast">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>Date:\t' + forecast.date + '</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>High:\t' + forecast.high + '</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>Low:\t' + forecast.low + '</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>' + forecast.text + '</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>');
 		});
-	}
+	} /*end getWeather*/
 
 	function randomize() {
 		var drawItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -34,20 +37,21 @@
 			drawItems[counter] = drawItems[winner];
 			drawItems[winner] = shuffle;
 		}
+		// $('.prize').remove();
 		$.each(drawItems, function (i, drawItem) {
 			$('.random-number-app').append('<p class="prize">' + drawItem + '</p>');
 		});
-	}
+	} /*end randomize*/
 
 	function challenge3() {
 		var swapper = {
 			title: 'this is a sample string',
 			onSwap: function onSwap() {
-				var str = this.title;
-				return str.split('').reverse().join('');
+				var string = this.title;
+				return string.split('').reverse().join('');
 			}
 		};
 		$('.reverse-string-app').append('<p>' + swapper.title + '</p>');
 		$('.reverse-string-app').append('<p>' + swapper.onSwap() + '</p>');
-	}
+	} /*end challenge3*/
 })();
