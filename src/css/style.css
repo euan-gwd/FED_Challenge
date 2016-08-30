@@ -1,0 +1,9 @@
+.weather-app { height: 250px; }
+
+.weather-app .forecast { float: left; height: 100px; list-style: none; }
+
+.challenges { clear: both; content: ''; display: block; }
+
+.c4 { -ms-flex-align: center; align-items: center; border: 1px solid #2cd57a; display: -ms-inline-flexbox; display: inline-flex; height: 100px; -ms-flex-pack: center; justify-content: center; width: 100px; }
+
+.prize { display: inline-block; height: 50px; list-style: none; width: 50px; }

@@ -4,11 +4,17 @@ $borders: #2cd57a;
 	height: 250px;
 
 	.forecast {
-		display: inline-block;
+		float: left;
 		height: 100px;
 		list-style: none;
-		width: 150px;
+		// width: 150px;
 	}
+}
+
+.challenges {
+	clear: both;
+	content: '';
+	display: block;
 }
 
 .c4 {
