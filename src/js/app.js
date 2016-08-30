@@ -4,6 +4,7 @@
 	$(function() {
 		getWeather();
 		randomize();
+		challenge3();
 	});
 
 	function getWeather() {
@@ -41,6 +42,18 @@
 		$.each(drawItems, function(i, drawItem) {
 			$('.random-number-app').append(`<p class="prize">${drawItem}</p>`);
 		});
+	}
+
+	function challenge3() {
+		var swapper = {
+			title: 'this is a sample string',
+			onSwap: function() {
+				var str = this.title;
+				return str.split('').reverse().join('');
+			}
+		};
+		$('.reverse-string-app').append(`<p>${swapper.title}</p>`);
+		$('.reverse-string-app').append(`<p>${swapper.onSwap()}</p>`);
 	}
 
 })();
