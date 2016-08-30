@@ -62,6 +62,45 @@ gulp.task('default', ['html', 'styles', 'es2015', 'browserSync'], () => {
 	gulp.watch('src/**/*.html', ['html']);
 });
 
-gulp.task('build', (callback) => {
-	runSequence('html', 'styles', 'es2015', callback);
+// Production Tasks
+
+// Compile Sass into CSS
+gulp.task('styles-dist', () => {
+	return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in src/scss
+		.pipe(plumber())
+		.pipe(sass({
+			outputStyle: 'compact'
+		}).on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
+		.pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR')) //adds vendor prefixes if needed
+		.pipe(gulp.dest('dist/css')) // outputs CSS to src/css
+		.pipe(reload({
+			stream: true
+		}));
+});
+
+// compiles es6 with Babel
+gulp.task('es2015-dist', () => {
+	return gulp.src('src/js/app.js')
+		.pipe(plumber())
+		.pipe(babel({
+			presets: ['es2015']
+		}))
+		.pipe(gulp.dest('dist'))
+		.pipe(reload({
+			stream: true
+		}));
+});
+
+//copy index.html to build
+gulp.task('html-dist', () => {
+	return gulp.src('src/index.html')
+		.pipe(plumber())
+		.pipe(gulp.dest('dist'))
+		.pipe(reload({
+			stream: true
+		}));
+});
+
+gulp.task('build-dist', (callback) => {
+	runSequence('html-dist', 'styles-dist', 'es2015-dist', callback);
 });
