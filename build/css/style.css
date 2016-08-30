@@ -1,8 +1,14 @@
-.weather-app { height: 250px; }
+body { box-sizing: border-box; text-align: center; }
+
+ul { list-style: none; margin: 0; padding: 0 1rem; }
+
+h2 { background-color: #8193a8; box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75); }
+
+.weather-app { height: 200px; }
 
 .weather-app .forecast { float: left; height: 100px; list-style: none; }
 
-.challenges { clear: both; content: ''; display: block; }
+.challenge { box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75); clear: both; content: ''; display: block; padding-bottom: .75rem; }
 
 .c4 { -ms-flex-align: center; align-items: center; border: 1px solid #2cd57a; display: -ms-inline-flexbox; display: inline-flex; height: 100px; -ms-flex-pack: center; justify-content: center; width: 100px; }
 

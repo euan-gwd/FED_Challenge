@@ -1,20 +1,39 @@
 $borders: #2cd57a;
+$shadow-color: rgba(50, 50, 50, .75);
+$bk-color: #8193a8;
+
+body {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+h2 {
+	background-color: $bk-color;
+	box-shadow: 0 2px 5px 0 $shadow-color;
+}
 
 .weather-app {
-	height: 250px;
+	height: 200px;
 
 	.forecast {
 		float: left;
 		height: 100px;
 		list-style: none;
-		// width: 150px;
 	}
 }
 
-.challenges {
+.challenge {
+	box-shadow: 0 2px 5px 0 $shadow-color;
 	clear: both;
 	content: '';
 	display: block;
+	padding-bottom: .75rem;
 }
 
 .c4 {
