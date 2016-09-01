@@ -5,7 +5,6 @@
 		getWeather();
 		$('.btn-draw').on('click', function() {
 			randomize();
-			$(this).remove();
 		});
 		challenge3();
 	});
@@ -32,18 +31,19 @@
 
 	function randomize() {
 		const drawItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-		let counter = 0;
-		while (counter < 7) {
+
+		for (let counter = 0; counter < 7; counter++) {
 			let winner = Math.floor(Math.random() * counter);
-			counter++;
 			let shuffle = drawItems[counter];
 			drawItems[counter] = drawItems[winner];
 			drawItems[winner] = shuffle;
 		}
-		// $('.prize').remove();
+		$('.random-number-app').empty();
 		$.each(drawItems, function(i, drawItem) {
 			$('.random-number-app').append(`<p class="prize">${drawItem}</p>`);
 		});
+		$('.random-number-app p:nth-last-child(-n+3)').remove();
+
 	} /*end randomize*/
 
 	function challenge3() {
